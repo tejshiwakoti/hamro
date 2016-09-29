@@ -1,0 +1,45 @@
+<nav class="nav">
+  <div class="nav-left">
+    <a class="nav-item is-brand" href="#">
+      <img src="http://media.cylex-uk.co.uk/companies/1931/7312/logo/logo.jpg" alt="Bulma logo">
+    </a>
+  </div>
+
+  <div class="nav-center">
+    <a class="nav-item" href="#">
+      <span class="icon">
+        <i class="fa fa-github"></i>
+      </span>
+    </a>
+    <a class="nav-item" href="#">
+      <span class="icon">
+        <i class="fa fa-twitter"></i>
+      </span>
+    </a>
+  </div>
+
+  <span class="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+
+  <div class="nav-right nav-menu">
+    <a class="nav-item" href="#">
+      Home
+    </a>
+
+    <a class="nav-item" href="#">
+      Blog
+    </a>
+
+    <span class="nav-item">
+      <% if user_signed_in? %>
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: 'button' %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path, class: 'button' %>
+        <%= link_to "Sign up", new_user_registration_path, class: 'button' %>
+      <% end %>
+    </span>
+  </div>
+</nav>
